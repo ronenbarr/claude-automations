@@ -3,7 +3,7 @@ name: Test Telegram Notification
 on:
   workflow_dispatch:
   schedule:
-    - cron: '38 20 20 4 *'  # 20:38 UTC = חצי שעה מעכשיו
+    - cron: '19 20 20 4 *'  # 20:19 UTC = עשר דקות מעכשיו
 
 jobs:
   notify:
