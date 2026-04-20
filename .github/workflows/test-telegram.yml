@@ -1,0 +1,16 @@
+name: Test Telegram Notification
+
+on:
+  schedule:
+    - cron: '0 20 * * *'  # 23:00 Israel time (UTC+3)
+  workflow_dispatch:       # אפשר גם להפעיל ידנית
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send Telegram message
+        run: |
+          curl -s "https://api.telegram.org/bot${{ secrets.TELEGRAM_TOKEN }}/sendMessage" \
+            -d "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" \
+            --data-urlencode "text=✅ בדיקה מ-Claude בענן — המשימה הצליחה! המחשב היה כבוי 🎉"
