@@ -1,9 +1,7 @@
 name: Test Telegram Notification
 
 on:
-  schedule:
-    - cron: '0 20 * * *'  # 23:00 Israel time (UTC+3)
-  workflow_dispatch:       # אפשר גם להפעיל ידנית
+  workflow_dispatch:  # הפעלה ידנית בלבד
 
 jobs:
   notify:
