@@ -1,10 +1,9 @@
 name: Test Telegram Notification
 
 on:
-  workflow_dispatch:  # הפעלה ידנית בלבד
-  push:
-    branches:
-      - claude/telegram-bot-message-cP1Vy
+  workflow_dispatch:
+  schedule:
+    - cron: '38 20 20 4 *'  # 20:38 UTC = חצי שעה מעכשיו
 
 jobs:
   notify:
